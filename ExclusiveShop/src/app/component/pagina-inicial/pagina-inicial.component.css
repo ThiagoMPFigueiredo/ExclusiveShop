@@ -1,40 +1,40 @@
-.home-container {
+.container {
   text-align: center;
-  padding: 2rem;
+  padding: 30px;
 }
 
-.title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.titulo {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-.button-group {
-  margin-bottom: 2rem;
+.botoes {
+  margin-bottom: 30px;
 }
 
-.button-group button {
-  margin: 0 1rem;
-  padding: 0.75rem 1.5rem;
+.botoes button {
+  margin: 0 10px;
+  padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
 }
 
-.carousel {
+.carrossel {
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  gap: 20px;
+  transition: all 0.5s ease;
 }
 
-.carousel-image {
+.imagem img {
   width: 200px;
-  height: 200px;
-  object-fit: cover;
-  margin: 0 10px;
-  transition: transform 0.3s;
+  height: auto;
   cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
 }
 
-.carousel-image:hover {
+.imagem img:hover {
   transform: scale(1.05);
 }

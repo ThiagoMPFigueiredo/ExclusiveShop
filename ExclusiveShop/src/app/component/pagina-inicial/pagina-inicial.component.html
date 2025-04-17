@@ -1,23 +1,18 @@
-<div class="home-container">
-  <h1 class="title">ExclusiveShop</h1>
+<div class="container">
+  <h1 class="titulo">ExclusiveShop</h1>
 
-  <div class="button-group">
-    <button (click)="navigateTo('/login')">Login</button>
-    <button (click)="navigateTo('/cadastro')">Cadastro</button>
-    <button (click)="navigateTo('/produtos')">Produtos</button>
+  <div class="botoes">
+    <button (click)="navegarPara('login')">Login</button>
+    <button (click)="navegarPara('cadastro')">Cadastro</button>
+    <button (click)="navegarPara('produtos')">Produtos</button>
   </div>
 
-  <div 
-    class="carousel"
-    (mouseenter)="onMouseEnter()"
-    (mouseleave)="onMouseLeave()"
-  >
-    <img 
-      *ngFor="let img of visibleImages" 
-      [src]="img" 
-      class="carousel-image"
-      (click)="openProduct(img)"
-    />
+  <div class="carrossel"
+       (mouseenter)="pausarCarrossel()"
+       (mouseleave)="retomarCarrossel()">
+    <div class="imagem" *ngFor="let produto of visiveis">
+      <img [src]="produto.imagem" (click)="irParaProduto(produto.id)" alt="Produto em destaque" />
+    </div>
   </div>
 </div>
 

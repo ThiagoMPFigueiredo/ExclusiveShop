@@ -1,69 +1,63 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagina-inicial',
-  imports: [],
   standalone: true,
+  imports: [NgFor, CommonModule],
   templateUrl: './pagina-inicial.component.html',
-  styleUrl: './pagina-inicial.component.css'
+  styleUrls: ['./pagina-inicial.component.css']
 })
-export class PaginaInicialComponent implements OnInit, OnDestroy {
-  images: string[] = [
-    'assets/img1.jpg',
-    'assets/img2.jpg',
-    'assets/img3.jpg',
-    'assets/img4.jpg',
-    'assets/img5.jpg',
-    'assets/img6.jpg'
+export class PaginaInicialComponent implements OnInit {
+  produtos = [
+    { id: 1, imagem: '../../../assets/produtos/Samsung_Galax_S25 base_azul.jpg' },
+    { id: 2, imagem: '../../../assets/produtos/Smart TV 4K LG UHD 70.jpg' },
+    { id: 3, imagem: '../../../assets/produtos/Geladeira Electrolux Frost Free 490L.jpg' },
+    { id: 4, imagem: '../../../assets/produtos/WAP Parafusadeira e Furadeira à Bateria com  Kit de 13 Acessórios e Maleta Empunhadura Emborrachada Bivolt.jpg' },
+    { id: 5, imagem: '../../../assets/produtos/MAGE MALE Jaqueta masculina.jpg' },
+    { id: 6, imagem: '../../../assets/produtos/Mochila Bolsa Notebook Reforçada Anti Furto Semi Impermeável.jpg' }
   ];
-  visibleImages: string[] = [];
-  currentIndex = 0;
-  interval: any;
-  paused = false;
+
+  visiveis: any[] = [];
+  startIndex = 0;
+  intervaloId: any;
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
-    this.updateVisibleImages();
-    this.startCarousel();
+  ngOnInit(): void {
+    this.atualizarVisiveis();
+    this.iniciarCarrossel();
   }
 
-  ngOnDestroy() {
-    clearInterval(this.interval);
+  atualizarVisiveis() {
+    this.visiveis = this.produtos.slice(this.startIndex, this.startIndex + 3);
   }
 
-  updateVisibleImages() {
-    this.visibleImages = [];
-    for (let i = 0; i < 3; i++) {
-      const index = (this.currentIndex + i) % this.images.length;
-      this.visibleImages.push(this.images[index]);
-    }
-  }
-
-  startCarousel() {
-    this.interval = setInterval(() => {
-      if (!this.paused) {
-        this.currentIndex = (this.currentIndex + 1) % this.images.length;
-        this.updateVisibleImages();
+  iniciarCarrossel() {
+    this.intervaloId = setInterval(() => {
+      this.startIndex = (this.startIndex + 1) % this.produtos.length;
+      if (this.startIndex + 3 > this.produtos.length) {
+        this.startIndex = 0;
       }
+      this.atualizarVisiveis();
     }, 10000);
   }
 
-  onMouseEnter() {
-    this.paused = true;
+  pausarCarrossel() {
+    clearInterval(this.intervaloId);
   }
 
-  onMouseLeave() {
-    this.paused = false;
+  retomarCarrossel() {
+    this.iniciarCarrossel();
   }
 
-  navigateTo(path: string) {
-    this.router.navigate([path]);
+  irParaProduto(id: number) {
+    this.router.navigate(['/produto', id]);
   }
 
-  openProduct(image: string) {
-    const productId = this.images.indexOf(image); // Substitua por ID real
-    this.router.navigate(['/produto', productId]);
+  navegarPara(caminho: string) {
+    this.router.navigate([caminho]);
   }
-
 }
