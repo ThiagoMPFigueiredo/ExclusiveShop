@@ -1,12 +1,14 @@
 <div class="container">
-  <h1 class="titulo">ExclusiveShop</h1>
-
-  <div class="botoes">
-    <button (click)="navegarPara('login')">Login</button>
-    <button (click)="navegarPara('cadastro')">Cadastro</button>
-    <button (click)="navegarPara('produtos')">Produtos</button>
-  </div>
-
+  <h1 class="titulo">
+    ExclusiveShop
+    <div class="botoes">
+      <button (click)="navegarPara('login')">Login</button>
+      <button (click)="navegarPara('cadastro')">Cadastro</button>
+      <button (click)="navegarPara('produtos')">Produtos</button>
+    </div>
+  </h1>
+  <br>
+  <h2 class="destaque">Produtos em destaque</h2>
   <div class="carrossel"
        (mouseenter)="pausarCarrossel()"
        (mouseleave)="retomarCarrossel()">
