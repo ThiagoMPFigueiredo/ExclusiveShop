@@ -6,10 +6,14 @@
 .titulo {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  font-family: 'Girassol', sans-serif;
+  display: flex;
+  background-color: #6c71a6;
 }
 
 .botoes {
   margin-bottom: 30px;
+  float: left;
 }
 
 .botoes button {
@@ -17,6 +21,9 @@
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
+  border-radius:10px;
+  background-color: black;
+  color: white; 
 }
 
 .carrossel {
