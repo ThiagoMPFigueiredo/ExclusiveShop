@@ -25,7 +25,9 @@
   background-color: black;
   color: white; 
 }
-
+.destaque{
+  font-size: 64px;
+}
 .carrossel {
   display: flex;
   justify-content: center;
