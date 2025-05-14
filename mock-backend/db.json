@@ -1,0 +1,26 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "João da Silva",
+      "email": "joao@email.com",
+      "senha": "123456"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Produto Exclusivo 1",
+      "descricao": "Produto reservado para usuários cadastrados",
+      "preco": 99.9,
+      "exclusivo": true
+    },
+    {
+      "id": 2,
+      "nome": "Produto Público 1",
+      "descricao": "Disponível para todos os visitantes",
+      "preco": 49.9,
+      "exclusivo": false
+    }
+  ]
+}
