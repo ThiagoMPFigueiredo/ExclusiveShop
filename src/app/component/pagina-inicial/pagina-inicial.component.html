@@ -1,26 +1,25 @@
 <div class="container">
- <div class="titulo">
-  <h1>ExclusiveShop</h1>
-  <div class="botoes">
-    <button (click)="navegarPara('login')">Login</button>
-    <button (click)="navegarPara('cadastro')">Cadastro</button>
-    <button (click)="navegarPara('produtos')">Produtos</button>
+  <div class="titulo">
+    <h1>ExclusiveShop</h1>
+    <div class="botoes">
+      <button (click)="navegarPara('login')">Login</button>
+      <button (click)="navegarPara('cadastro')">Cadastro</button>
+      <button (click)="navegarPara('produtos')">Produtos</button>
+    </div>
   </div>
-</div>
   <br>
- <h2 class="destaque">Produtos em destaque</h2>
-<div class="carrossel-container"
-     (mouseenter)="pausarCarrossel()"
-     (mouseleave)="retomarCarrossel()">
-  <div class="carrossel-track" [style.transform]="'translateX(-' + offset + 'px)'">
-    <div class="card-wrapper" *ngFor="let produto of produtos" (click)="irParaProduto(produto.id)">
-      <app-produto
-        [imageUrl]="produto.imagem"
-        [description]="produto.descricao"
-        [price]="produto.preco">
-      </app-produto>
+  <h2 class="destaque">Produtos em destaque</h2>
+  <div class="carrossel-container"
+    (mouseenter)="pausarCarrossel()"
+    (mouseleave)="retomarCarrossel()">
+    <div class="carrossel-track" [style.transform]="'translateX(-' + offset + 'px)'">
+      <div class="card-wrapper" *ngFor="let produto of produtos" (click)="irParaProduto(produto.id)">
+        <app-produto
+          [imageUrl]="produto.imagem"
+          [description]="produto.descricao"
+          [price]="produto.preco">
+        </app-produto>
+      </div>
     </div>
   </div>
 </div>
-</div>
-
