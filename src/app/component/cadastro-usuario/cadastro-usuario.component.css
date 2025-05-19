@@ -19,7 +19,7 @@
 
 .image-side {
   flex: 1;
-  background: url('../../../assets/layout/imagem_layout_cadastro.png') no-repeat center center;
+  background: url('/assets/layout/imagem_layout_cadastro.png') no-repeat center center;
   background-size: cover;
   min-height: 400px;
 }
