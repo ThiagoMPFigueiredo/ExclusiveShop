@@ -1,0 +1,22 @@
+<div class="cadastro-container">
+  <h1>Cadastro</h1>
+  <div class="cadastro-card">
+    <div class="image-side"></div>
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" class="form-side">
+      <h2>Crie sua conta</h2>
+      <label>Nome</label>
+      <input type="text" formControlName="nome" />
+
+      <label>e-mail</label>
+      <input type="email" formControlName="email" />
+
+      <label>Senha(Mínimo de 6 a 8 caracteres)</label>
+      <input type="password" formControlName="senha" />
+
+      <button type="submit" [disabled]="!cadastroForm.valid">Cadastrar</button>
+      <button type="button" class="btn btn-secondary mt-2" (click)="voltarParaHome()">
+        Voltar para a Página Inicial
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="titulo">
+    <h1>ExclusiveShop</h1>
+    <div class="botoes">
+      <button (click)="navegarPara('pagina-inicial')">Página Inicial</button>
+      <button (click)="navegarPara('login')">Login</button>
+      <button (click)="navegarPara('cadastro')">Cadastro</button>
+    </div>
+  </div>
+
+  <br />
+  <h2 class="destaque">Produtos</h2>
+
+  <!-- Filtro de categoria -->
+  <div class="filtro-categorias">
+    <label for="categoria">Filtrar por categoria:</label>
+    <select id="categoria" [(ngModel)]="categoriaSelecionada" (change)="filtrarPorCategoria()">
+      <option value="">Todas</option>
+      <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+    </select>
+  </div>
+
+  <!-- Lista de produtos -->
+  <div class="produtos-lista">
+    <div class="card-wrapper" *ngFor="let produto of produtosFiltrados" (click)="irParaProduto(produto.id)">
+      <app-produto
+        [imageUrl]="produto.imagem"
+        [description]="produto.descricao"
+        [price]="produto.preco">
+      </app-produto>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "imagem": "/assets/produtos/Samsung_Galax_S25_base_azul.jpg",
+      "descricao": "Samsung Galaxy S25",
+      "preco": 3999.90,
+      "categoria": "Smartphones",
+      "exclusivo": false
+    },
+    {
+      "id": 2,
+      "imagem": "/assets/produtos/Smart_TV_4K_LG_UHD_70.jpg",
+      "descricao": "Smart TV LG 70\"",
+      "preco": 4599.00,
+      "categoria": "TVs",
+      "exclusivo": true
+    },
+    {
+      "id": 3,
+      "imagem": "/assets/produtos/Fone_de_Ouvido_Bluetooth_Samsung_Galaxy_Buds_3.jpg",
+      "descricao": "Fone de Ouvido Bluetooth Sony",
+      "preco": 399.90,
+      "categoria": "Acessórios",
+      "exclusivo": false
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "João",
+      "email": "joao@email.com",
+      "senha": "123456"
+    }
+  ]
+}

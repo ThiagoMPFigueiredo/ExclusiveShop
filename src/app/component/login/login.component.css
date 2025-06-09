@@ -1,0 +1,75 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.left-panel {
+  flex: 1;
+  background: url('/assets/layout/imagem_layout_login.png') no-repeat center center;
+  background-size: cover;
+}
+
+.right-panel {
+  flex: 1;
+  background-color: #6c71a6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0 40px;
+}
+
+.right-panel h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.icon {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: white;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: white;
+  color: #6c71a6;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e6e6e6;
+}
+
+.login-button + .login-button {
+  margin-top: 30px;
+}
+
+.error {
+  margin-top: 10px;
+  color: #ffdddd;
+}
