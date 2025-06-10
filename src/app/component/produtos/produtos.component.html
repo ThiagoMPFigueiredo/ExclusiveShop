@@ -8,26 +8,27 @@
     </div>
   </div>
 
-  <br />
   <h2 class="destaque">Produtos</h2>
 
-  <!-- Filtro de categoria -->
-  <div class="filtro-categorias">
-    <label for="categoria">Filtrar por categoria:</label>
-    <select id="categoria" [(ngModel)]="categoriaSelecionada" (change)="filtrarPorCategoria()">
-      <option value="">Todas</option>
-      <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
-    </select>
+  <!-- Filtros por categoria -->
+  <div class="filtros-categorias">
+    <button *ngFor="let categoria of categorias" 
+            (click)="filtrarPorCategoria(categoria)" 
+            [class.ativo]="categoriaSelecionada === categoria">
+      {{ categoria }}
+    </button>
   </div>
 
   <!-- Lista de produtos -->
   <div class="produtos-lista">
-    <div class="card-wrapper" *ngFor="let produto of produtosFiltrados" (click)="irParaProduto(produto.id)">
-      <app-produto
-        [imageUrl]="produto.imagem"
-        [description]="produto.descricao"
-        [price]="produto.preco">
-      </app-produto>
+    <div class="card-wrapper" *ngFor="let produto of produtosFiltrados">
+      <a [href]="produto.link" target="_blank" rel="noopener noreferrer">
+        <app-produto
+          [imageUrl]="produto.imagem"
+          [description]="produto.descricao"
+          [price]="produto.preco">
+        </app-produto>
+      </a>
     </div>
   </div>
 </div>

@@ -9,6 +9,7 @@ export interface Produto {
   preco: number;
   categoria: string;
   exclusivo: boolean;
+  link: string;
 }
 
 @Injectable({
@@ -20,6 +21,6 @@ export class ProdutoService {
   constructor(private http: HttpClient) {}
 
   listarTodos(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(this.apiUrl);
+    return this.http.get<Produto[]>('/api/produtos');
   }
 }

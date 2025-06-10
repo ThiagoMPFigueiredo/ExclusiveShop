@@ -1,60 +1,90 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { ProdutoComponent } from '../estrutura/produto/produto.component';
-import { ProdutoService, Produto } from '../../services/produto.service';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ProdutosComponent } from './produtos.component';
+import { ProdutoService } from '../../services/produto.service';
 import { AuthService } from '../../services/auth.service';
-import { FormsModule } from '@angular/forms';
+import { of } from 'rxjs';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
-@Component({
-  selector: 'app-produtos',
-  standalone: true,
-  imports: [CommonModule, FormsModule, ProdutoComponent],
-  templateUrl: './produtos.component.html',
-  styleUrl: './produtos.component.css'
-})
-export class ProdutosComponent implements OnInit {
-  produtos: Produto[] = [];
-  produtosFiltrados: Produto[] = [];
-  categorias: string[] = [];
-  categoriaSelecionada: string = '';
-
-  constructor(
-    private router: Router,
-    private produtoService: ProdutoService,
-    private authService: AuthService
-  ) {}
-
-  ngOnInit(): void {
-    this.produtoService.listarTodos().subscribe(produtos => {
-      // Se não autenticado, filtrar os produtos exclusivos
-      if (!this.authService.isAutenticado()) {
-        produtos = produtos.filter(p => !p.exclusivo);
-      }
-
-      this.produtos = produtos;
-      this.produtosFiltrados = produtos;
-
-      // Extração dinâmica das categorias
-      this.categorias = Array.from(new Set(produtos.map(p => p.categoria)));
-    });
+// Mock de produtos
+const MOCK_PRODUTOS = [
+  {
+    id: 1,
+    imagem: '/assets/produtos/produto1.jpg',
+    descricao: 'Celular Samsung',
+    preco: 1999.99,
+    categoria: 'eletronicos',
+    exclusivo: false,
+    link: 'https://example.com/produto1'
+  },
+  {
+    id: 2,
+    imagem: '/assets/produtos/produto2.jpg',
+    descricao: 'Livro de Filosofia',
+    preco: 49.90,
+    categoria: 'livros',
+    exclusivo: false,
+    link: 'https://example.com/produto2'
+  },
+  {
+    id: 3,
+    imagem: '/assets/produtos/produto3.jpg',
+    descricao: 'Mesa de Escritório',
+    preco: 399.99,
+    categoria: 'moveis',
+    exclusivo: true,
+    link: 'https://example.com/produto3'
   }
+];
 
-  filtrarPorCategoria(): void {
-    if (this.categoriaSelecionada === '') {
-      this.produtosFiltrados = this.produtos;
-    } else {
-      this.produtosFiltrados = this.produtos.filter(
-        p => p.categoria === this.categoriaSelecionada
-      );
-    }
-  }
+describe('ProdutosComponent', () => {
+  let component: ProdutosComponent;
+  let fixture: ComponentFixture<ProdutosComponent>;
 
-  irParaProduto(id: number): void {
-    this.router.navigate(['/produto', id]);
-  }
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ProdutosComponent, RouterTestingModule],
+      providers: [
+        {
+          provide: ProdutoService,
+          useValue: {
+            listarTodos: () => of(MOCK_PRODUTOS)
+          }
+        },
+        {
+          provide: AuthService,
+          useValue: {
+            isAutenticado: () => true
+          }
+        }
+      ]
+    }).compileComponents();
 
-  navegarPara(caminho: string): void {
-    this.router.navigate([caminho]);
-  }
-}
+    fixture = TestBed.createComponent(ProdutosComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('deve carregar os produtos ao iniciar', () => {
+    expect(component.produtos.length).toBe(3);
+    expect(component.produtosFiltrados.length).toBe(3);
+  });
+
+  it('deve filtrar produtos pela categoria "livros"', () => {
+    component.filtrarPorCategoria('livros');
+    expect(component.produtosFiltrados.length).toBe(1);
+    expect(component.produtosFiltrados[0].categoria).toBe('livros');
+  });
+
+  it('deve exibir todos os produtos quando filtro for "Todos os produtos"', () => {
+    component.filtrarPorCategoria('Todos os produtos');
+    expect(component.produtosFiltrados.length).toBe(3);
+  });
+
+  it('deve navegar para rota ao chamar navegarPara()', () => {
+    const router = TestBed.inject(Router);
+    const spy = spyOn(router, 'navigate');
+    component.navegarPara('login');
+    expect(spy).toHaveBeenCalledWith(['login']);
+  });
+});

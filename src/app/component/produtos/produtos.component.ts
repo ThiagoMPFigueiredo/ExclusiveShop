@@ -16,8 +16,16 @@ import { FormsModule } from '@angular/forms';
 export class ProdutosComponent implements OnInit {
   produtos: Produto[] = [];
   produtosFiltrados: Produto[] = [];
-  categorias: string[] = [];
-  categoriaSelecionada: string = '';
+  categoriaSelecionada: string = 'Todos os produtos';
+
+  categorias = [
+    'Todos os produtos',
+    'eletronicos',
+    'roupas',
+    'utensilios',
+    'moveis',
+    'livros'
+  ];
 
   constructor(
     private router: Router,
@@ -27,31 +35,24 @@ export class ProdutosComponent implements OnInit {
 
   ngOnInit(): void {
     this.produtoService.listarTodos().subscribe(produtos => {
-      // Se não autenticado, filtrar os produtos exclusivos
-     
+      if (!this.authService.isAutenticado()) {
+        produtos = produtos.filter(p => !p.exclusivo);
+      }
       this.produtos = produtos;
-      this.produtosFiltrados = produtos;
-
-      // Extração dinâmica das categorias
-      this.categorias = Array.from(new Set(produtos.map(p => p.categoria)));
-      console.log('Produtos carregados:', this.produtos);
+      this.filtrarPorCategoria(this.categoriaSelecionada);
     });
   }
-  
-  filtrarPorCategoria(): void {
-    if (this.categoriaSelecionada === '') {
-      this.produtosFiltrados = this.produtos;
-    } else {
-      this.produtosFiltrados = this.produtos.filter(
-        p => p.categoria === this.categoriaSelecionada
-      );
-    }
-  }
 
-  irParaProduto(id: number): void {
-    this.router.navigate(['/produto', id]);
+  filtrarPorCategoria(categoria: string): void {
+  this.categoriaSelecionada = categoria;
+  if (categoria === 'Todos os produtos') {
+    this.produtosFiltrados = this.produtos;
+  } else {
+    this.produtosFiltrados = this.produtos.filter(
+      p => p.categoria === categoria
+    );
   }
-
+}
   navegarPara(caminho: string): void {
     this.router.navigate([caminho]);
   }

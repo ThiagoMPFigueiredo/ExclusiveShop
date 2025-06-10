@@ -1,97 +1,37 @@
-.titulo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Girassol', sans-serif;
-    font-size: 2.5rem;
-    background-color: #6c71a6;
-    padding: 20px 30px;
-    color: black;
-    border-radius: 8px;
-  }
-  
-  .titulo h1 {
-    margin: 0;
-    color: #eeeeee;
-  }
-  
-  .botoes {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .botoes button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    transition: background-color 0.3s;
-  }
-  
-  .botoes button:hover {
-    background-color: #333;
-  }
-  
-  .destaque{
-    font-size: 64px;
-  }
-  
-  .carrossel-container {
-    width: 875px; /* 3 cards de 275px + 2 gaps de 25px */
-    overflow: hidden;
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  .carrossel-track {
-    display: flex;
-    transition: transform 0.6s ease-in-out;
-    gap: 25px;
-  }
-  
-  .card-wrapper {
-    flex-shrink: 0;
-    width: 275px;
-  }
-  
-  .carrossel {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 20px 0;
-  }
-  
-  .imagem img {
-    width: 200px;
-    height: auto;
-    cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-  }
-  
-  .imagem img:hover {
-    transform: scale(1.05);
-  }
-  .filtro-categorias {
-  margin: 20px;
-  font-size: 1.1rem;
+.filtros-categorias {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
 }
 
-.filtro-categorias select {
-  margin-left: 10px;
-  padding: 6px 10px;
-  border-radius: 6px;
+.filtros-categorias button {
+  padding: 8px 20px;
   font-size: 1rem;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filtros-categorias button.ativo,
+.filtros-categorias button:hover {
+  background-color: #6c71a6;
+  color: white;
+  border: none;
 }
 
 .produtos-lista {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
   justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card-wrapper {
+  width: 275px;
+  text-decoration: none;
 }
