@@ -4,6 +4,7 @@
     <div class="botoes">
       <button (click)="navegarPara('login')">Login</button>
       <button (click)="navegarPara('cadastro')">Cadastro</button>
+      <button *ngIf="usuarioLogado" (click)="irParaPerfil()">Perfil</button>
       <button (click)="navegarPara('produtos')">Produtos</button>
     </div>
   </div>
@@ -13,12 +14,14 @@
     (mouseenter)="pausarCarrossel()"
     (mouseleave)="retomarCarrossel()">
     <div class="carrossel-track" [style.transform]="'translateX(-' + offset + 'px)'">
-      <div class="card-wrapper" *ngFor="let produto of produtos" (click)="irParaProduto(produto.id)">
-        <app-produto
-          [imageUrl]="produto.imagem"
-          [description]="produto.descricao"
-          [price]="produto.preco">
-        </app-produto>
+      <div class="card-wrapper" *ngFor="let produto of produtos">
+        <a [href]="produto.link" target="_blank" rel="noopener noreferrer">
+          <app-produto
+            [imageUrl]="produto.imagem"
+            [description]="produto.descricao"
+            [price]="produto.preco">
+          </app-produto>
+        </a>
       </div>
     </div>
   </div>

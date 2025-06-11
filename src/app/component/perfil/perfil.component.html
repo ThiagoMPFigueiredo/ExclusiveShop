@@ -1,29 +1,30 @@
 <div class="perfil-container">
-  <h1>Usuário</h1>
-  <form [formGroup]="usuarioForm" (ngSubmit)="salvarAlteracoes()">
-    <label for="nome">Nome</label>
-    <input id="nome" type="text" formControlName="nome" />
+  <h1>Perfil do Usuário</h1>
 
-    <label for="email">Email</label>
-    <input id="email" type="email" formControlName="email" />
+  <div class="dados-usuario">
+    <p><strong>Nome:</strong> {{ usuario?.nome }}</p>
+    <p><strong>Email:</strong> {{ usuario?.email }}</p>
+  </div>
 
-    <label for="senha">Nova Senha</label>
-    <input id="senha" type="password" formControlName="senha" placeholder="Deixe em branco para não alterar" />
-
-    <button type="submit" [disabled]="!usuarioForm.valid">Salvar Alterações</button>
-    <button type="button" (click)="logout()">Logout</button>
-  </form>
+  <div class="botoes-acao">
+    <button (click)="logout()">Logout</button>
+    <button (click)="irParaProdutos()">Ver Produtos</button>
+    <button (click)="irParaHome()">Página Inicial</button>
+  </div>
 
   <div class="secao">
     <h2>Meios de Pagamento</h2>
-    <p>Você não tem um meio de pagamento registrado.</p>
-    <button class="btn-secundario">+ Adicionar um meio de pagamento</button>
+    <ul>
+      <li *ngFor="let p of pagamentos">{{ p.descricao }}</li>
+    </ul>
+    <button class="btn-secundario" (click)="adicionarPagamento()">+ Adicionar um meio de pagamento</button>
   </div>
 
   <div class="secao">
     <h2>Endereço de Frete</h2>
-    <p>Você não tem um endereço registrado.</p>
-    <button class="btn-secundario">+ Adicionar um endereço</button>
+    <ul>
+      <li *ngFor="let e of enderecos">{{ e.descricao }}</li>
+    </ul>
+    <button class="btn-secundario" (click)="adicionarEndereco()">+ Adicionar um endereço</button>
   </div>
 </div>
-

@@ -1,3 +1,41 @@
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Girassol', sans-serif;
+  font-size: 2.5rem;
+  background-color: #6c71a6;
+  padding: 20px 30px;
+  color: black;
+  border-radius: 8px;
+}
+.titulo h1 {
+  margin: 0;
+  color: #eeeeee;
+}
+
+.botoes-iniciais {
+  display: flex;
+  gap: 15px;
+}
+
+.botoes-iniciais button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  transition: background-color 0.3s;
+}
+.botoes-iniciais button:hover {
+  background-color: #333;
+}
+
+.destaque{
+  font-size: 64px;
+}
 .filtros-categorias {
   display: flex;
   justify-content: center;

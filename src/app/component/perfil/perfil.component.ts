@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { Endereco, EnderecoService } from '../../services/endereco.service';
+import { Pagamento, PagamentoService } from '../../services/pagamento.service';
 
 @Component({
   selector: 'app-perfil',
@@ -12,53 +14,86 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './perfil.component.css'
 })
 export class PerfilComponent implements OnInit{
-  usuarioForm: FormGroup;
+  usuario: any;
+  usuarioForm!: FormGroup;
   usuarioId!: number;
-
+  enderecos: Endereco[] = [];
+  pagamentos: Pagamento[] = [];
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private fb: FormBuilder
-  ) {
+    private fb: FormBuilder,
+    private enderecoService: EnderecoService,
+    private pagamentoService: PagamentoService
+  ) {}
+
+  ngOnInit(): void {
     this.usuarioForm = this.fb.group({
       nome: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       senha: ['']
     });
-  }
 
-  ngOnInit(): void {
-    this.usuarioId = Number(this.route.snapshot.paramMap.get('id'));
+    const routeId = this.route.snapshot.paramMap.get('id');
+    this.usuarioId = routeId ? Number(routeId) : JSON.parse(localStorage.getItem('usuarioLogado') || '{}')?.id;
+
+    if (!this.usuarioId) {
+      alert('Usuário não identificado.');
+      this.router.navigate(['/login']);
+      return;
+    }
+
     fetch(`/api/usuarios/${this.usuarioId}`)
       .then(res => res.json())
       .then(usuario => {
-        this.usuarioForm.patchValue({
-          nome: usuario.nome,
-          email: usuario.email
-        });
-        localStorage.setItem('usuarioLogado', JSON.stringify(usuario)); // atualiza localStorage
+        this.usuario = usuario;
+        this.usuarioForm.patchValue({ nome: usuario.nome, email: usuario.email });
+        localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
       });
-  }
 
-  salvarAlteracoes(): void {
-    const dados = this.usuarioForm.value;
-    fetch(`/api/usuarios/${this.usuarioId}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        nome: dados.nome,
-        email: dados.email,
-        ...(dados.senha ? { senha: dados.senha } : {})
-      })
-    }).then(() => {
-      alert('Dados atualizados com sucesso!');
+    this.carregarEnderecos();
+    this.carregarPagamentos();
+}
+
+  carregarEnderecos() {
+  this.enderecoService.listarPorUsuario(this.usuarioId).subscribe(data => {
+    this.enderecos = data;
+  });
+}
+
+carregarPagamentos() {
+  this.pagamentoService.listarPorUsuario(this.usuarioId).subscribe(data => {
+    this.pagamentos = data;
+  });
+}
+
+adicionarEndereco() {
+  const descricao = prompt('Digite o endereço:');
+  if (descricao) {
+    this.enderecoService.adicionar({ userId: this.usuarioId, descricao }).subscribe(() => {
+      this.carregarEnderecos();
     });
   }
+}
 
+adicionarPagamento() {
+  const descricao = prompt('Digite o meio de pagamento:');
+  if (descricao) {
+    this.pagamentoService.adicionar({ userId: this.usuarioId, descricao }).subscribe(() => {
+      this.carregarPagamentos();
+    });
+  }
+}
   logout(): void {
     localStorage.removeItem('authToken');
     localStorage.removeItem('usuarioLogado');
     this.router.navigate(['/']);
   }
+  irParaProdutos(): void {
+  this.router.navigate(['/produtos']);
+}
+irParaHome(): void {
+  this.router.navigate(['/']);
+}
 
 }

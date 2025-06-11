@@ -1,3 +1,7 @@
+body {
+  background-color: #6c71a6;
+}
+
 .perfil-container {
   max-width: 800px;
   margin: 40px auto;
@@ -12,18 +16,16 @@
   color: #333;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 40px;
+.dados-usuario {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
 }
 
-input {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.dados-usuario p {
+  margin: 10px 0;
 }
 
 button {
@@ -34,6 +36,13 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  margin-bottom: 20px;
+}
+.botoes-acao {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 button:hover {

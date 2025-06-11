@@ -28,11 +28,13 @@ export class CadastroUsuarioComponent {
   onSubmit(): void {
     if (this.cadastroForm.valid) {
       this.authService.cadastrar(this.cadastroForm.value).subscribe(() => {
-      const { email, senha } = this.cadastroForm.value;
-      this.authService.autenticar(email, senha).subscribe(success => {
-        const usuario = JSON.parse(localStorage.getItem('usuarioLogado')!);
-        this.router.navigate(['/perfil', usuario.id]);
-      });
+        const { email, senha } = this.cadastroForm.value;
+        this.authService.autenticar(email, senha).subscribe(success => {
+          if (success) {
+            const usuario = JSON.parse(localStorage.getItem('usuarioLogado')!);
+            this.router.navigate(['/perfil', usuario.id]);
+          }
+        });
       }, error => {
         alert('Erro ao cadastrar: ' + error.message);
       });
