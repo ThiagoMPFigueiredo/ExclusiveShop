@@ -1,7 +1,7 @@
 {
   "produtos": [
     {
-      "id": "1",
+      "id": 1,
       "imagem": "/assets/produtos/Samsung_Galax_S25_base_azul.jpg",
       "descricao": "Samsung Galaxy S25",
       "preco": 5669.1,
@@ -10,7 +10,7 @@
       "link": "https://shop.samsung.com/br/galaxy-s25-256gb/p"
     },
     {
-      "id": "2",
+      "id": 2,
       "imagem": "/assets/produtos/Smart_TV_4K_LG_UHD_70.jpg",
       "descricao": "Smart TV LG 70 polegadas",
       "preco": 4599,
@@ -19,7 +19,7 @@
       "link": "https://www.lg.com/br/tvs-e-soundbars/tv-uhd-4k/70ur8750psa/"
     },
     {
-      "id": "3",
+      "id": 3,
       "imagem": "/assets/produtos/Fone_de_Ouvido_Bluetooth_Samsung_Galaxy_Buds_3.jpg",
       "descricao": "Fone de Ouvido Bluetooth Sansung Galaxy Bud 3",
       "preco": 944.06,
@@ -28,7 +28,7 @@
       "link": "https://www.kabum.com.br/produto/614238/samsung-galaxy-buds3-fone-de-ouvido-sem-fio-cancelamento-ativo-de-ruido-galaxy-ai-cinza"
     },
     {
-      "id": "4",
+      "id": 4,
       "imagem": "/assets/produtos/Geladeira_Electrolux_490L.jpg",
       "descricao": "Geladeira Electrolux Frost Free 490L",
       "preco": 4559.9,
@@ -37,7 +37,7 @@
       "link": "https://www.gazin.com.br/produto/geladeira-electrolux-frost-free-490l-efficient-autosense-inverse-ib7s/7497/inox/220-volts"
     },
     {
-      "id": "5",
+      "id": 5,
       "imagem": "/assets/produtos/Kit_Ferramentas_WAP.jpg",
       "descricao": "Kit de Ferramentas WAP",
       "preco": 161.41,
@@ -46,7 +46,7 @@
       "link": "https://www.amazon.com.br/Parafusadeira-Furadeira-WAP-Carregador-Acess%C3%B3rios/dp/B09V1SM8QB"
     },
     {
-      "id": "6",
+      "id": 6,
       "imagem": "/assets/produtos/Jaqueta_Masculina_MAGE_MALE.jpg",
       "descricao": "Jaqueta Masculina MAGE MALE",
       "preco": 259.22,
@@ -55,7 +55,7 @@
       "link": "https://www.amazon.com.br/MAGE-MALE-masculina-elegante-esportiva/dp/B0DPS5SR6V"
     },
     {
-      "id": "7",
+      "id": 7,
       "imagem": "/assets/produtos/Mochila_Anti_Furto_Notebook.jpg",
       "descricao": "Mochila Anti Furto para Notebook",
       "preco": 169.9,
@@ -64,7 +64,7 @@
       "link": "https://www.amazon.com.br/Mochila-Anti-Furto-Unissex-Notebook/dp/B0DJB8Y6LR"
     },
     {
-      "id": "8",
+      "id": 8,
       "descricao": "JBL Quantum Duo",
       "preco": 1199,
       "categoria": "eletronicos",
@@ -73,7 +73,7 @@
       "link": "https://www.jbl.com.br/caixas-de-som-para-computador/QUANTUM+DUO-.html"
     },
     {
-      "id": "9",
+      "id": 9,
       "descricao": "Vestido Longo Feminino",
       "preco": 159.9,
       "categoria": "roupas",
@@ -82,7 +82,7 @@
       "link": "https://www.cea.com.br/vestido-longo-feminino-franzido-alca-fina-vinho-1086787-vinho_escu/p"
     },
     {
-      "id": "10",
+      "id": 10,
       "descricao": "Camiseta infantil Capitão América",
       "preco": 79.99,
       "categoria": "roupas",
@@ -91,7 +91,7 @@
       "link": "https://www.riachuelo.com.br/camiseta-infantil-capit-o-america-asa-posterior-4-10a-branca-marvel-15685500_sku_sku"
     },
     {
-      "id": "11",
+      "id": 11,
       "descricao": "Casaco com cinto",
       "preco": 399,
       "categoria": "roupas",
@@ -100,7 +100,7 @@
       "link": "https://www.zara.com/br/pt/casaco-com-cinto-p08779158.html?v1=421507412"
     },
     {
-      "id": "12",
+      "id": 12,
       "descricao": "Jaqueta Feminina de Couro",
       "preco": 1039.99,
       "categoria": "roupas",
@@ -109,7 +109,7 @@
       "link": "https://www.dafiti.com.br/Jaqueta-de-Couro-Bea-JVL-Preta-14594649.html"
     },
     {
-      "id": "13",
+      "id": 13,
       "descricao": "Jogo de Panelas Tramontina",
       "preco": 726.25,
       "categoria": "utensilios",
@@ -118,7 +118,7 @@
       "link": "https://www.tramontina.com.br/jogo-de-panelas-tramontina-loreto-em-aluminio-com-revestimento-interno-e-externo-antiaderente-starflon-max-com-cabos-e-alcas-vermelho-7-pecas/20399783.html"
     },
     {
-      "id": "14",
+      "id": 14,
       "descricao": "Aspirador de Pó Vertical sem fio",
       "preco": 539,
       "categoria": "utensilios",
@@ -127,7 +127,7 @@
       "link": "https://www.magazineluiza.com.br/aspirador-de-po-vertical-sem-fio-electrolux-ergorapido-2-em-1-ate-21-min-verde-erg22/p/ec327g3h3b/ep/apdv/"
     },
     {
-      "id": "15",
+      "id": 15,
       "descricao": "Mesa de Escritório Compacta",
       "preco": 140.27,
       "categoria": "moveis",
@@ -136,7 +136,7 @@
       "link": "https://www.madeiramadeira.com.br/escrivaninha-mesa-computador-office-compacta-pratica-ej-moveis-preto-340053120.html?index=prod-poc-madeira"
     },
     {
-      "id": "16",
+      "id": 16,
       "descricao": "Cadeira Gamer Reclinável",
       "preco": 899.9,
       "categoria": "moveis",
@@ -145,7 +145,7 @@
       "link": "https://www.kabum.com.br/produto/471925/cadeira-gamer-kbm-gaming-tempest-cg600-preta-com-almofadas-descanso-para-pernas-retratil-reclinavel-kgcg600pt"
     },
     {
-      "id": "17",
+      "id": 17,
       "descricao": "Guarda-Roupa 6 Portas",
       "preco": 1879.2,
       "categoria": "moveis",
@@ -154,7 +154,7 @@
       "link": "https://www.casasbahia.com.br/guarda-roupa-casal-ripado-6-portas-6-gavetas-potente-moveis-europa/p/1562822648?IdLojista=31534"
     },
     {
-      "id": "18",
+      "id": 18,
       "descricao": "Cadeira Poltrona Conforto Para Escritório",
       "preco": 313.45,
       "categoria": "moveis",
@@ -163,7 +163,7 @@
       "link": "https://www.mobly.com.br/cadeira-poltrona-conforto-para-escritorio-sala-luxo-moblan-decor-1365436.html?trackingId=eyJzZWFyY2hJZCI6IjliZjc0NzNlLTc1OWMtNDA5Zi1hYzY1LTI0YzJlYzg1ZWM1MiIsIm9yaWdpbiI6InNlYXJjaCIsInByb2R1Y3QiOnsicmFua2luZyI6NiwicGlkIjoiTU80NTdVUDYzUldVTU9CIiwic2t1cyI6W119fQ%253D%253D#a=3|p=6|pn=1|t=Busca"
     },
     {
-      "id": "19",
+      "id": 19,
       "descricao": "Mesa de Jantar 6 Lugares",
       "preco": 2599,
       "categoria": "moveis",
@@ -172,7 +172,7 @@
       "link": "https://www.madeiramadeira.com.br/conjunto-de-jantar-6-lugares-mesa-1-80m-em-mdf-e-base-ripada-862718579.html?origem=pla-862718579&id=862718579"
     },
     {
-      "id": "20",
+      "id": 20,
       "descricao": "O Senhor dos Anéis - Box",
       "preco": 299.9,
       "categoria": "livros",
@@ -181,7 +181,7 @@
       "link": "https://www.amazon.com.br/Senhor-dos-Aneis-Colecionador-Ilustra%C3%A7%C3%B5es/dp/6555112514/ref=sr_1_2?dib=eyJ2IjoiMSJ9.N7TYWPa6MbkMK5nXBtdK0SnUMiow_VM_-Tpsa8Glo_M7Q0RkMuqHVAfP8I1rXZPz4ganPINu1lioPW-DNJlQ5VZCH8ANzBJ1FzUB5jBPjzQaFD0hFAftwCe-OX_8lqskHVP6JfAR0SzJkxZoPqtZ1XxKZA91-c6UbhoT8K400OtlwYqzJ0-_snCyUJ8OBQpJym1_6Q1q9IFMsmzd8XWMpAPUi0raBxJ4IN192Q91u_cj2AjX-Rt7mhv54MV5cL1m1jVtFlFL2-O8lX8bwuDC0Wb3QKinAs6AWGKRRCFM3F8.e3iKP36OOBoBEyEUCgjQvFAWqkqRmjDW2apnUOHZe9Y&dib_tag=se&keywords=O+Senhor+dos+An%C3%A9is+-+Box&qid=1749567818&sr=8-2&ufe=app_do%3Aamzn1.fos.fcd6d665-32ba-4479-9f21-b774e276a678"
     },
     {
-      "id": "21",
+      "id": 21,
       "descricao": "O Mundo de Sofia",
       "preco": 57.63,
       "categoria": "livros",
@@ -190,7 +190,7 @@
       "link": "https://www.amazon.com.br/mundo-Sofia-Jostein-Gaarder/dp/8535921893/ref=sr_1_1?dib=eyJ2IjoiMSJ9.y0EtsMGdB5tu3_Io7VQ4cte8oz4kWO03hk3Tm9H9zpnDw3LNUSDsmqFzl0DCaY0j0qKI9M4YqgDX72hD3NZbhdGQ-P1wgzg7mDgt5acPeuK7OV3OD9SfGVOC1Xz3k_YswO77RyMSRFxZNaN3JNb3R_mZFvX3d-OaC-8gxezpNg0IYdQzF3qrc_ckEFfWfQ4CZQTULUJXhLvE1jy4S0vwtcdgQIBJ4nj2OPO3TETZfXXx2BYZaKeyUSs51Yo_ljmYNQ8wIx3U10eO_BsIR3VxAi4nfJsCbAEzULiMhY-xpnM.ZCPxG1ymR_J0yV4zGldTe_K6aJwD6WJ24cgl_Z7Gkhg&dib_tag=se&keywords=O+Mundo+de+Sofia&qid=1749568675&sr=8-1&ufe=app_do%3Aamzn1.fos.6d798eae-cadf-45de-946a-f477d47705b9"
     },
     {
-      "id": "22",
+      "id": 22,
       "descricao": "Box Trilogia Família real no Brasil",
       "preco": 134.9,
       "categoria": "livros",
@@ -199,7 +199,7 @@
       "link": "https://www.amazon.com.br/Box-Trilogia-Fam%C3%ADlia-real-Brasil/dp/6559871657/ref=sr_1_1?dib=eyJ2IjoiMSJ9.DuSiKxrmuNoeisadWPNGNdmeF2zI_P0MFlRi7N1prCrSnOo8hCFzcUgE4Np-VQV0mQAAWmpUOP9EFjyjr0IWiEtqXEaK9gJrs1mBANORYN124uD995Gtp4kzSUdet1erDOvkamAe9IDyN12kkYWPw59l0HRj-cZjCDNNev_ul4dAO1ZWzpFQi0m39M8iMiWj_ytHxQv3rgJ7tTbz6zWMdg31hpqYsUS4qQKsbNbO7PWJRLdF8-iwmTp2XkNYaUpUqi1t8eAAKooUMzDZPyLLR8-JY080Z16va96SjNNRd4c.CjQt5BkJXYEzsGe5ZQsEewYiFECM1IE5b0n6_GOn1-Q&dib_tag=se&keywords=Hist%C3%B3ria+do+Brasil+-+Laurentino+Gomes&qid=1749568863&sr=8-1&ufe=app_do%3Aamzn1.fos.6a09f7ec-d911-4889-ad70-de8dd83c8a74"
     },
     {
-      "id": "23",
+      "id": 23,
       "descricao": "1984 - George Orwell",
       "preco": 21,
       "categoria": "livros",
@@ -208,7 +208,7 @@
       "link": "https://www.amazon.com.br/1984-George-Orwell/dp/8535914846/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3N5J2F5Q0HQP9&dib=eyJ2IjoiMSJ9.YmAQI_v2aNNn_GqixoPw_VtPI44gKZMVXs193hP-7L28nUyBQlWR7sn-YCMIdhMup0FiKQj5zBGWL1MZWK7riQcEactTiLKZ7_sxsDAGXTnIJmBKPt_bOiLIqtGwRjikK_E4N_LZXUqrXPPGGySHpRaY5lg9oSetBGpRLQNq_88VEDJxK9dlSQdut967PZXGYS1ojYEuPI5rAvbFOoY_3xuJy5cTAwEMyjrWcDNLngn0iQhKt2WTW7o8tv0wsGLfyNjy1txV2euSxcZV2J8sh_ikNNlChfJp1lw5b0IAwkY.-JGdr4W6p7rkZfhNsB5YiBay7jhem_U6uX0DqZrD5FM&dib_tag=se&keywords=1984+-+George+Orwell&qid=1749569197&sprefix=1984+-+george+orwell+%2Caps%2C185&sr=8-1"
     },
     {
-      "id": "24",
+      "id": 24,
       "descricao": "Dom Quixote (Edição de Luxo Almofadada)",
       "preco": 79.94,
       "categoria": "livros",
@@ -219,25 +219,19 @@
   ],
   "usuarios": [
     {
-      "id": "1",
+      "id": 1,
       "nome": "João",
       "email": "joao@email.com",
       "senha": "123456"
     },
     {
-      "id": "2",
+      "id": 2,
       "nome": "Thiago",
       "email": "thiago@email.com",
       "senha": "teste123"
     },
     {
-      "id": "3",
-      "nome": "Igor",
-      "email": "igor@email.com",
-      "senha": "teste321"
-    },
-    {
-      "id": "5f04",
+      "id": 3,
       "nome": "Igor",
       "email": "igor@email.com",
       "senha": "teste321"
@@ -245,24 +239,24 @@
   ],
   "enderecos": [
     {
-      "id": "1",
+      "id": 1,
       "userId": 1,
       "descricao": "Rua Exemplo, 123 - Centro"
     },
     {
-      "id": "2",
+      "id": 2,
       "userId": 2,
       "descricao": "Rua Rio Verde"
     }
   ],
   "pagamentos": [
     {
-      "id": "1",
+      "id": 1,
       "userId": 1,
       "descricao": "Cartão Visa final 1234"
     },
     {
-      "id": "2",
+      "id": 2,
       "userId": 2,
       "descricao": "Cartão"
     }
