@@ -7,7 +7,7 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly apiUrl = '/api';
+  private readonly apiUrl = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
 
   // Cadastro de novo usuário

@@ -16,11 +16,11 @@ export interface Produto {
   providedIn: 'root'
 })
 export class ProdutoService {
-  private readonly apiUrl = '/api/produtos';
+  private readonly apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
   listarTodos(): Observable<Produto[]> {
-    return this.http.get<Produto[]>('/api/produtos');
+    return this.http.get<Produto[]>(`${this.apiUrl}/produtos`);
   }
 }
